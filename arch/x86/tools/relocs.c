@@ -971,7 +971,7 @@ static void emit_relocs(int as_text, int use_real_mode)
 	int i;
 	int (*write_reloc)(uint32_t, FILE *) = write32;
 	int (*do_reloc)(struct section *sec, Elf_Rel *rel, Elf_Sym *sym,
-			const char *symname);
+			const char *symname) = NULL;
 
 #if ELF_BITS == 64
 	if (!use_real_mode)
