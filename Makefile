@@ -302,6 +302,7 @@ HOSTCXXFLAGS = -O2
 
 ifeq ($(shell $(HOSTCC) -v 2>&1 | grep -c "clang version"), 1)
 HOSTCFLAGS  += -Wno-unused-value -Wno-unused-parameter \
+		-Wformat-zero-length \
 		-Wno-missing-field-initializers -fno-delete-null-pointer-checks
 endif
 
